@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [data, setData] = useState([])
@@ -9,12 +10,12 @@ const Home = () => {
             .then(data => setData(data))
     }, [])
 
-    const handleView = (id) => {
-        console.log(id);
-    }
-    const handleUpdate = (id) => {
-        console.log(id);
-    }
+    // const handleView = (id) => {
+    //     console.log(id);
+    // }
+    // const handleUpdate = (id) => {
+    //     console.log(id);
+    // }
     const handleDelete = (id) => {
         const con = confirm('are you sure')
         if (con) {
@@ -54,8 +55,8 @@ const Home = () => {
                                 <p><b className='font-medium'>Price : </b>{d.price}</p>
                             </div>
                             <div>
-                                <p><button onClick={() => handleView(d._id)} className='bg-orange-300 p-2 w-8'>W</button></p>
-                                <p><button onClick={() => handleUpdate(d._id)} className='bg-slate-800 italic p-2 w-8'>l</button></p>
+                                <p><button className='bg-orange-300 p-2 w-8'>W</button></p>
+                                <p><Link to={`/updateCoffee/${d._id}`}><button className='bg-slate-800 italic p-2 w-8'>l</button></Link></p>
                                 <p><button onClick={() => handleDelete(d._id)} className='bg-red-400 p-2 w-8'>X</button></p>
                             </div>
                         </div>
