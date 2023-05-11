@@ -1,12 +1,16 @@
-import { useState } from 'react'
-import './App.css'
+import { Link, Outlet } from 'react-router-dom'
 
 function App() {
 
   return (
-    <>
-      <h2 className='text-5xl'>Al Noman</h2>
-    </>
+    <div>
+      <nav className='text-center bg-purple-400 p-3'>
+        <Link to='/' className='mx-2 p-2 font-medium'>Home</Link>
+        <Link to='/addCoffee' className='mx-2 p-2 font-medium'>Add Coffee</Link>
+        <Link to='/updateCoffee' className='mx-2 p-2 font-medium'>Update Coffee</Link>
+      </nav>
+      <Outlet />
+    </div>
   )
 }
 
